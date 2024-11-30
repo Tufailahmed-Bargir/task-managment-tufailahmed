@@ -13,7 +13,10 @@ export default function Header() {
           <Link href="#testimonials" className="text-muted-foreground hover:text-primary">Testimonials</Link>
           <Link href="#pricing" className="text-muted-foreground hover:text-primary">Pricing</Link>
         </nav>
+        <Link href={'/signup'}>
+        
         <Button>Sign Up</Button>
+        </Link>
       </div>
     </header>
   )

@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 export default function Hero() {
   return (
@@ -10,9 +11,11 @@ export default function Hero() {
         <p className="text-xl sm:text-2xl mb-8 max-w-2xl mx-auto">
           Boost your productivity and streamline your workflow with TaskMaster, the ultimate task management solution.
         </p>
+        <Link href={'/tasks'}>
         <Button size="lg" variant="secondary">
           Get Started for Free
         </Button>
+         </Link>
       </div>
     </section>
   )

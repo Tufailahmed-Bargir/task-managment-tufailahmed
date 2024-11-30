@@ -7,16 +7,22 @@ import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
 import { deleteTask } from '@/app/actions'
 import TaskForm from './task-form'
+import prisma from '@/lib/db'
 
 interface TaskCardProps {
   task: Task
 }
 
-export default function TaskCard({ task,description }: TaskCardProps) {
+export default function TaskCard({ task }: TaskCardProps) {
   const [isEditing, setIsEditing] = useState(false)
 
   const handleDelete = async () => {
-    await deleteTask(task.id)
+    const deletePost = await prisma.task.delete({
+      where:{
+        id:task.id
+      }
+    })
+    // await deleteTask(task.id)
   }
 
   const priorityColors = {
